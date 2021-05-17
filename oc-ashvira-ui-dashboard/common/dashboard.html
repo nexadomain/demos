@@ -1,1260 +1,1384 @@
+<!--
+=========================================================
+* Soft UI Dashboard - v1.0.2
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard
+* Copyright 2021 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://github.com/creativetimofficial/soft-ui-dashboard/blob/master/LICENSE.md)
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Dashboard</title>
-    <base href="http://localhost/Framework/OCs/admin/" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/creativetimofficial/soft-ui-dashboard@1.0.2/assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/creativetimofficial/soft-ui-dashboard@1.0.2/assets/img/favicon.png">
-    <!--     Fonts and icons     -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-    <!-- Nucleo Icons -->
-    <link href="https://cdn.jsdelivr.net/gh/creativetimofficial/soft-ui-dashboard@1.0.2/assets/css/nucleo-svg.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/gh/creativetimofficial/soft-ui-dashboard@1.0.2/assets/css/nucleo-svg.css" rel="stylesheet" />
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/v4-shims.css">
-    <!-- CSS Files -->
-    <link id="pagestyle" href="https://cdn.jsdelivr.net/gh/creativetimofficial/soft-ui-dashboard@1.0.2/assets/css/soft-ui-dashboard.min.css" rel="stylesheet" />
-    <!--   Core JS Files   -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/smooth-scrollbar@8.6.2/dist/smooth-scrollbar.min.js"></script>
-    <script src="https://demo.opencart.com/admin/view/javascript/common.js" type="text/javascript"></script>
-    <!-- Canonical SEO -->
-    <link rel="canonical" href="https://demos.jhom.co/oc-ashvira-ui-dashboard/common/dashboard.html" />
-  </head>
-  <body class="g-sidenav-show  bg-gray-100">
-    <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-left ms-3 bg-white"
-      id="sidenav-main" data-color="info">
-      <div class="sidenav-header">
-        <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute right-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
-        <a class="navbar-brand m-0" href="http://localhost/Framework/OCs/admin/index.php?route=common/dashboard&amp;user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS">
-        <img src="https://cdn.jsdelivr.net/gh/opencart/opencart@3.0.3.7/upload/image/no_image.png" class="navbar-brand-img h-100 w-15" alt="OpenCart">
-        <span class="ms-1 font-weight-bold">OpenCart</span>
-        </a>
-      </div>
-      <hr class="horizontal dark mt-0">
-      <div class="collapse navbar-collapse  w-auto" id="sidenav-collapse-main">
-        <ul class="navbar-nav" id="menu">
-          <li class="nav-item" id="menu-dashboard">
-            <a class="nav-link active" href="http://localhost/Framework/OCs/admin/index.php?route=common/dashboard&amp;user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS">
-              <div
-                class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                <i class="fa fa-dashboard"></i>
-              </div>
-              <span class="nav-link-text ms-1">Dashboard</span>
+   <head>
+      <meta charset="utf-8" />
+      <title>Dashboard</title>
+      <base href="http://localhost/Framework/OCs/admin/" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/creativetimofficial/soft-ui-dashboard@1.0.2/assets/img/apple-icon.png">
+      <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/creativetimofficial/soft-ui-dashboard@1.0.2/assets/img/favicon.png">
+      <!--     Fonts and icons     -->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+      <!-- Nucleo Icons -->
+      <link href="https://cdn.jsdelivr.net/gh/creativetimofficial/soft-ui-dashboard@1.0.2/assets/css/nucleo-svg.css" rel="stylesheet" />
+      <link href="https://cdn.jsdelivr.net/gh/creativetimofficial/soft-ui-dashboard@1.0.2/assets/css/nucleo-svg.css" rel="stylesheet" />
+      <!-- Font Awesome Icons -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/v4-shims.css">
+      <!-- CSS Files -->
+      <link id="pagestyle" href="https://cdn.jsdelivr.net/gh/creativetimofficial/soft-ui-dashboard@1.0.2/assets/css/soft-ui-dashboard.min.css" rel="stylesheet" />
+      <!--   Core JS Files   -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/smooth-scrollbar@8.6.2/dist/smooth-scrollbar.min.js"></script>
+      <script src="https://demo.opencart.com/admin/view/javascript/common.js" type="text/javascript"></script>
+      <!-- Canonical SEO -->
+      <link rel="canonical" href="https://demos.jhom.co/oc-ashvira-ui-dashboard/common/dashboard.html" />
+   </head>
+   <body class="g-sidenav-show  bg-gray-100">
+      <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-left ms-3 bg-white"
+         id="sidenav-main" data-color="info">
+         <div class="sidenav-header">
+            <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute right-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+            <a class="navbar-brand m-0" href="http://localhost/Framework/OCs/admin/index.php?route=common/dashboard&amp;user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS">
+            <img src="https://cdn.jsdelivr.net/gh/opencart/opencart@3.0.3.7/upload/image/no_image.png" class="navbar-brand-img h-100 w-15" alt="OpenCart">
+            <span class="ms-1 font-weight-bold">OpenCart</span>
             </a>
-          </li>
-          <li class="nav-item" id="menu-catalog">
-            <a class="nav-link" data-bs-toggle="collapse" href="#collapse1">
-              <div
-                class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                <i class="fa fa-tags"></i>
-              </div>
-              <span class="nav-link-text ms-1">
-              <span>Catalog</span>
-              </span>
-            </a>
-            <div class="collapse" id="collapse1">
-              <ul class="nav">
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/route=catalog/category.html">
-                  <span class="nav-link-text ms-1">Categories</span>
+         </div>
+         <hr class="horizontal dark mt-0">
+         <div class="collapse navbar-collapse  w-auto" id="sidenav-collapse-main">
+            <ul class="navbar-nav" id="menu">
+               <li class="nav-item" id="menu-dashboard">
+                  <a class="nav-link active" href="http://localhost/Framework/OCs/admin/index.php?route=common/dashboard&amp;user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS">
+                     <div
+                        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa fa-dashboard"></i>
+                     </div>
+                     <span class="nav-link-text ms-1">Dashboard</span>
                   </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/catalog/product.html">
-                  <span class="nav-link-text ms-1">Products</span>
+               </li>
+               <li class="nav-item" id="menu-catalog">
+                  <a class="nav-link" data-bs-toggle="collapse" href="#collapse1">
+                     <div
+                        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa fa-tags"></i>
+                     </div>
+                     <span class="nav-link-text ms-1">
+                     <span>Catalog</span>
+                     </span>
                   </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/route=catalog/recurring.html">
-                  <span class="nav-link-text ms-1">Recurring Profiles</span>
-                  </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/route=catalog/filter.html">
-                  <span class="nav-link-text ms-1">Filters</span>
-                  </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" data-bs-toggle="collapse" href="#collapse1-4">
-                  <span class="nav-link-text ms-1">
-                  <span>Attributes</span>
-                  </span>
-                  </a>
-                  <div class="collapse" id="collapse1-4">
-                    <ul class="nav">
-                      <li class="nav-item ">
-                        <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/catalog/attribute.html">
-                        <span class="nav-link-text ms-1">Attributes</span>
-                        </a>
-                      </li>
-                      <li class="nav-item ">
-                        <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/catalog/attribute_group.html">
-                        <span class="nav-link-text ms-1">Attribute Groups</span>
-                        </a>
-                      </li>
-                    </ul>
+                  <div class="collapse" id="collapse1">
+                     <ul class="nav">
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/route=catalog/category.html">
+                           <span class="nav-link-text ms-1">Categories</span>
+                           </a>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/catalog/product.html">
+                           <span class="nav-link-text ms-1">Products</span>
+                           </a>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/route=catalog/recurring.html">
+                           <span class="nav-link-text ms-1">Recurring Profiles</span>
+                           </a>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/route=catalog/filter.html">
+                           <span class="nav-link-text ms-1">Filters</span>
+                           </a>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" data-bs-toggle="collapse" href="#collapse1-4">
+                           <span class="nav-link-text ms-1">
+                           <span>Attributes</span>
+                           </span>
+                           </a>
+                           <div class="collapse" id="collapse1-4">
+                              <ul class="nav">
+                                 <li class="nav-item ">
+                                    <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/catalog/attribute.html">
+                                    <span class="nav-link-text ms-1">Attributes</span>
+                                    </a>
+                                 </li>
+                                 <li class="nav-item ">
+                                    <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/catalog/attribute_group.html">
+                                    <span class="nav-link-text ms-1">Attribute Groups</span>
+                                    </a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/catalog/option.html">
+                           <span class="nav-link-text ms-1">Options</span>
+                           </a>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/catalog/manufacturer.html">
+                           <span class="nav-link-text ms-1">Manufacturers</span>
+                           </a>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/catalog/download.html">
+                           <span class="nav-link-text ms-1">Downloads</span>
+                           </a>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/catalog/review.html">
+                           <span class="nav-link-text ms-1">Reviews</span>
+                           </a>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/catalog/information.html">
+                           <span class="nav-link-text ms-1">Information</span>
+                           </a>
+                        </li>
+                     </ul>
                   </div>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/catalog/option.html">
-                  <span class="nav-link-text ms-1">Options</span>
+               </li>
+               <li class="nav-item" id="menu-extension">
+                  <a class="nav-link" data-bs-toggle="collapse" href="#collapse2">
+                     <div
+                        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa fa-puzzle-piece"></i>
+                     </div>
+                     <span class="nav-link-text ms-1">
+                     <span>Extensions</span>
+                     </span>
                   </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/catalog/manufacturer.html">
-                  <span class="nav-link-text ms-1">Manufacturers</span>
-                  </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/catalog/download.html">
-                  <span class="nav-link-text ms-1">Downloads</span>
-                  </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/catalog/review.html">
-                  <span class="nav-link-text ms-1">Reviews</span>
-                  </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/catalog/information.html">
-                  <span class="nav-link-text ms-1">Information</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item" id="menu-extension">
-            <a class="nav-link" data-bs-toggle="collapse" href="#collapse2">
-              <div
-                class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                <i class="fa fa-puzzle-piece"></i>
-              </div>
-              <span class="nav-link-text ms-1">
-              <span>Extensions</span>
-              </span>
-            </a>
-            <div class="collapse" id="collapse2">
-              <ul class="nav">
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/marketplace/marketplace.html">
-                  <span class="nav-link-text ms-1">Marketplace</span>
-                  </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/marketplace/installer.html">
-                  <span class="nav-link-text ms-1">Installer</span>
-                  </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/marketplace/extension.html">
-                  <span class="nav-link-text ms-1">Extensions</span>
-                  </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/marketplace/modification.html">
-                  <span class="nav-link-text ms-1">Modifications</span>
-                  </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/marketplace/event.html">
-                  <span class="nav-link-text ms-1">Events</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item" id="menu-design">
-            <a class="nav-link" data-bs-toggle="collapse" href="#collapse3">
-              <div
-                class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                <i class="fa fa-television"></i>
-              </div>
-              <span class="nav-link-text ms-1">
-              <span>Design</span>
-              </span>
-            </a>
-            <div class="collapse" id="collapse3">
-              <ul class="nav">
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/design/layout.html">
-                  <span class="nav-link-text ms-1">Layouts</span>
-                  </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/design/theme.html">
-                  <span class="nav-link-text ms-1">Theme Editor</span>
-                  </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/design/translation.html">
-                  <span class="nav-link-text ms-1">Language Editor</span>
-                  </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/design/banner.html">
-                  <span class="nav-link-text ms-1">Banners</span>
-                  </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/route=design/seo_url.html">
-                  <span class="nav-link-text ms-1">SEO URL</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item" id="menu-sale">
-            <a class="nav-link" data-bs-toggle="collapse" href="#collapse4">
-              <div
-                class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                <i class="fa fa-shopping-cart"></i>
-              </div>
-              <span class="nav-link-text ms-1">
-              <span>Sales</span>
-              </span>
-            </a>
-            <div class="collapse" id="collapse4">
-              <ul class="nav">
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/sale/order.html">
-                  <span class="nav-link-text ms-1">Orders</span>
-                  </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://localhost/Framework/OCs/admin/index.php?route=sale/recurring.html">
-                  <span class="nav-link-text ms-1">Recurring Orders</span>
-                  </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/sale/return.html">
-                  <span class="nav-link-text ms-1">Returns</span>
-                  </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" data-bs-toggle="collapse" href="#collapse4-3">
-                  <span class="nav-link-text ms-1">
-                  <span>Gift Vouchers</span>
-                  </span>
-                  </a>
-                  <div class="collapse" id="collapse4-3">
-                    <ul class="nav">
-                      <li class="nav-item ">
-                        <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/sale/voucher.html">
-                        <span class="nav-link-text ms-1">Gift Vouchers</span>
-                        </a>
-                      </li>
-                      <li class="nav-item ">
-                        <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/sale/voucher_theme.html">
-                        <span class="nav-link-text ms-1">Voucher Themes</span>
-                        </a>
-                      </li>
-                    </ul>
+                  <div class="collapse" id="collapse2">
+                     <ul class="nav">
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/marketplace/marketplace.html">
+                           <span class="nav-link-text ms-1">Marketplace</span>
+                           </a>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/marketplace/installer.html">
+                           <span class="nav-link-text ms-1">Installer</span>
+                           </a>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/marketplace/extension.html">
+                           <span class="nav-link-text ms-1">Extensions</span>
+                           </a>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/marketplace/modification.html">
+                           <span class="nav-link-text ms-1">Modifications</span>
+                           </a>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/marketplace/event.html">
+                           <span class="nav-link-text ms-1">Events</span>
+                           </a>
+                        </li>
+                     </ul>
                   </div>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item" id="menu-customer">
-            <a class="nav-link" data-bs-toggle="collapse" href="#collapse5">
-              <div
-                class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                <i class="fa fa-user"></i>
-              </div>
-              <span class="nav-link-text ms-1">
-              <span>Customers</span>
-              </span>
-            </a>
-            <div class="collapse" id="collapse5">
-              <ul class="nav">
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/customer/customer.html">
-                  <span class="nav-link-text ms-1">Customers</span>
+               </li>
+               <li class="nav-item" id="menu-design">
+                  <a class="nav-link" data-bs-toggle="collapse" href="#collapse3">
+                     <div
+                        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa fa-television"></i>
+                     </div>
+                     <span class="nav-link-text ms-1">
+                     <span>Design</span>
+                     </span>
                   </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/customer/customer_group.html">
-                  <span class="nav-link-text ms-1">Customer Groups</span>
-                  </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/customer/customer_approval.html">
-                  <span class="nav-link-text ms-1">Customer Approvals</span>
-                  </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/customer/custom_field.html">
-                  <span class="nav-link-text ms-1">Custom Fields</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item" id="menu-marketing">
-            <a class="nav-link" data-bs-toggle="collapse" href="#collapse6">
-              <div
-                class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                <i class="fa fa-share-alt"></i>
-              </div>
-              <span class="nav-link-text ms-1">
-              <span>Marketing</span>
-              </span>
-            </a>
-            <div class="collapse" id="collapse6">
-              <ul class="nav">
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/marketing/marketing.html">
-                  <span class="nav-link-text ms-1">Marketing</span>
-                  </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/marketing/coupon.html">
-                  <span class="nav-link-text ms-1">Coupons</span>
-                  </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/marketing/contact.html">
-                  <span class="nav-link-text ms-1">Mail</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item" id="menu-system">
-            <a class="nav-link" data-bs-toggle="collapse" href="#collapse7">
-              <div
-                class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                <i class="fa fa-cog"></i>
-              </div>
-              <span class="nav-link-text ms-1">
-              <span>System</span>
-              </span>
-            </a>
-            <div class="collapse" id="collapse7">
-              <ul class="nav">
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/setting/store.html">
-                  <span class="nav-link-text ms-1">Settings</span>
-                  </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" data-bs-toggle="collapse" href="#collapse7-1">
-                  <span class="nav-link-text ms-1">
-                  <span>Users</span>
-                  </span>
-                  </a>
-                  <div class="collapse" id="collapse7-1">
-                    <ul class="nav">
-                      <li class="nav-item ">
-                        <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/user/user.html">
-                        <span class="nav-link-text ms-1">Users</span>
-                        </a>
-                      </li>
-                      <li class="nav-item ">
-                        <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/user/user_permission.html">
-                        <span class="nav-link-text ms-1">User Groups</span>
-                        </a>
-                      </li>
-                      <li class="nav-item ">
-                        <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/user/api.html">
-                        <span class="nav-link-text ms-1">API</span>
-                        </a>
-                      </li>
-                    </ul>
+                  <div class="collapse" id="collapse3">
+                     <ul class="nav">
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/design/layout.html">
+                           <span class="nav-link-text ms-1">Layouts</span>
+                           </a>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/design/theme.html">
+                           <span class="nav-link-text ms-1">Theme Editor</span>
+                           </a>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/design/translation.html">
+                           <span class="nav-link-text ms-1">Language Editor</span>
+                           </a>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/design/banner.html">
+                           <span class="nav-link-text ms-1">Banners</span>
+                           </a>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/route=design/seo_url.html">
+                           <span class="nav-link-text ms-1">SEO URL</span>
+                           </a>
+                        </li>
+                     </ul>
                   </div>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" data-bs-toggle="collapse" href="#collapse7-2">
-                  <span class="nav-link-text ms-1">
-                  <span>Localisation</span>
-                  </span>
+               </li>
+               <li class="nav-item" id="menu-sale">
+                  <a class="nav-link" data-bs-toggle="collapse" href="#collapse4">
+                     <div
+                        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa fa-shopping-cart"></i>
+                     </div>
+                     <span class="nav-link-text ms-1">
+                     <span>Sales</span>
+                     </span>
                   </a>
-                  <div class="collapse" id="collapse7-2">
-                    <ul class="nav">
-                      <li class="nav-item ">
-                        <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/location.html">
-                        <span class="nav-link-text ms-1">Store Location</span>
-                        </a>
-                      </li>
-                      <li class="nav-item ">
-                        <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/language.html">
-                        <span class="nav-link-text ms-1">Languages</span>
-                        </a>
-                      </li>
-                      <li class="nav-item ">
-                        <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/currency.html">
-                        <span class="nav-link-text ms-1">Currencies</span>
-                        </a>
-                      </li>
-                      <li class="nav-item ">
-                        <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/stock_status.html">
-                        <span class="nav-link-text ms-1">Stock Statuses</span>
-                        </a>
-                      </li>
-                      <li class="nav-item ">
-                        <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/order_status.html">
-                        <span class="nav-link-text ms-1">Order Statuses</span>
-                        </a>
-                      </li>
-                      <li class="nav-item ">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#collapse-7-2-5">
-                        <span class="nav-link-text ms-1">
-                        <span>Returns</span>
-                        </span>
-                        </a>
-                        <div class="collapse" id="collapse-7-2-5">
-                          <ul class="nav">
-                            <li class="nav-item ">
-                              <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/return_status.html">
-                              <span class="nav-link-text ms-1">Return Statuses</span>
-                              </a>
-                            </li>
-                            <li class="nav-item ">
-                              <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/return_action.html">
-                              <span class="nav-link-text ms-1">Return Actions</span>
-                              </a>
-                            </li>
-                            <li class="nav-item ">
-                              <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/return_reason.html">
-                              <span class="nav-link-text ms-1">Return Reasons</span>
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      </li>
-                      <li class="nav-item ">
-                        <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/country.html">
-                        <span class="nav-link-text ms-1">Countries</span>
-                        </a>
-                      </li>
-                      <li class="nav-item ">
-                        <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/zone.html">
-                        <span class="nav-link-text ms-1">Zones</span>
-                        </a>
-                      </li>
-                      <li class="nav-item ">
-                        <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/geo_zone.html">
-                        <span class="nav-link-text ms-1">Geo Zones</span>
-                        </a>
-                      </li>
-                      <li class="nav-item ">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#collapse-7-2-9">
-                        <span class="nav-link-text ms-1">
-                        <span>Taxes</span>
-                        </span>
-                        </a>
-                        <div class="collapse" id="collapse-7-2-9">
-                          <ul class="nav">
-                            <li class="nav-item ">
-                              <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/tax_class.html">
-                              <span class="nav-link-text ms-1">Tax Classes</span>
-                              </a>
-                            </li>
-                            <li class="nav-item ">
-                              <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/tax_rate.html">
-                              <span class="nav-link-text ms-1">Tax Rates</span>
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      </li>
-                      <li class="nav-item ">
-                        <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/length_class.html">
-                        <span class="nav-link-text ms-1">Length Classes</span>
-                        </a>
-                      </li>
-                      <li class="nav-item ">
-                        <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/weight_class.html">
-                        <span class="nav-link-text ms-1">Weight Classes</span>
-                        </a>
-                      </li>
-                    </ul>
+                  <div class="collapse" id="collapse4">
+                     <ul class="nav">
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/sale/order.html">
+                           <span class="nav-link-text ms-1">Orders</span>
+                           </a>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://localhost/Framework/OCs/admin/index.php?route=sale/recurring.html">
+                           <span class="nav-link-text ms-1">Recurring Orders</span>
+                           </a>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/sale/return.html">
+                           <span class="nav-link-text ms-1">Returns</span>
+                           </a>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" data-bs-toggle="collapse" href="#collapse4-3">
+                           <span class="nav-link-text ms-1">
+                           <span>Gift Vouchers</span>
+                           </span>
+                           </a>
+                           <div class="collapse" id="collapse4-3">
+                              <ul class="nav">
+                                 <li class="nav-item ">
+                                    <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/sale/voucher.html">
+                                    <span class="nav-link-text ms-1">Gift Vouchers</span>
+                                    </a>
+                                 </li>
+                                 <li class="nav-item ">
+                                    <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/sale/voucher_theme.html">
+                                    <span class="nav-link-text ms-1">Voucher Themes</span>
+                                    </a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                     </ul>
                   </div>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" data-bs-toggle="collapse" href="#collapse7-3">
-                  <span class="nav-link-text ms-1">
-                  <span>Maintenance</span>
-                  </span>
+               </li>
+               <li class="nav-item" id="menu-customer">
+                  <a class="nav-link" data-bs-toggle="collapse" href="#collapse5">
+                     <div
+                        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa fa-user"></i>
+                     </div>
+                     <span class="nav-link-text ms-1">
+                     <span>Customers</span>
+                     </span>
                   </a>
-                  <div class="collapse" id="collapse7-3">
-                    <ul class="nav">
-                      <li class="nav-item ">
-                        <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/tool/backup.html">
-                        <span class="nav-link-text ms-1">Backup / Restore</span>
-                        </a>
-                      </li>
-                      <li class="nav-item ">
-                        <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/tool/upload.html">
-                        <span class="nav-link-text ms-1">Uploads</span>
-                        </a>
-                      </li>
-                      <li class="nav-item ">
-                        <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/tool/log.html">
-                        <span class="nav-link-text ms-1">Error Logs</span>
-                        </a>
-                      </li>
-                    </ul>
+                  <div class="collapse" id="collapse5">
+                     <ul class="nav">
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/customer/customer.html">
+                           <span class="nav-link-text ms-1">Customers</span>
+                           </a>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/customer/customer_group.html">
+                           <span class="nav-link-text ms-1">Customer Groups</span>
+                           </a>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/customer/customer_approval.html">
+                           <span class="nav-link-text ms-1">Customer Approvals</span>
+                           </a>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/customer/custom_field.html">
+                           <span class="nav-link-text ms-1">Custom Fields</span>
+                           </a>
+                        </li>
+                     </ul>
                   </div>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item" id="menu-report">
-            <a class="nav-link" data-bs-toggle="collapse" href="#collapse8">
-              <div
-                class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                <i class="fa fa-bar-chart"></i>
-              </div>
-              <span class="nav-link-text ms-1">
-              <span>Reports</span>
-              </span>
-            </a>
-            <div class="collapse" id="collapse8">
-              <ul class="nav">
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/report/report.html">
-                  <span class="nav-link-text ms-1">Reports</span>
+               </li>
+               <li class="nav-item" id="menu-marketing">
+                  <a class="nav-link" data-bs-toggle="collapse" href="#collapse6">
+                     <div
+                        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa fa-share-alt"></i>
+                     </div>
+                     <span class="nav-link-text ms-1">
+                     <span>Marketing</span>
+                     </span>
                   </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/report/online.html">
-                  <span class="nav-link-text ms-1">Who's Online</span>
-                  </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/report/statistics.html">
-                  <span class="nav-link-text ms-1">Statistics</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="sidenav-footer mx-3 mt-3 pt-3" id="stats">
-        <div class="card card-background shadow-none card-background-mask-info" id="sidenavCard">
-          <div class="full-background" style="background-image: url('https://cdn.jsdelivr.net/gh/creativetimofficial/soft-ui-dashboard@1.0.2/assets/img/curved-images/white-curved.jpeg')">
-          </div>
-          <div class="card-body text-left p-3 w-100">
-            <div
-              class="icon icon-shape icon-sm bg-white shadow text-center mb-3 d-flex align-items-center justify-content-center border-radius-md">
-              <i class="ni ni-diamond text-info text-gradient text-lg top-0" aria-hidden="true" id="sidenavCardIcon"></i>
-            </div>
-            <div class="progress-wrapper my-2">
-              <div class="progress-info">
-                <div class="progress-percentage d-flex justify-content-between">
-                  <span class="text-sm font-weight-bold">Orders Completed</span>
-                  <span class="text-sm font-weight-bold">0%</span>
-                </div>
-              </div>
-              <div class="progress">
-                <div class="progress-bar bg-gradient-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0"
-                  aria-valuemax="100" style="width: 0%;"></div>
-              </div>
-            </div>
-            <div class="progress-wrapper my-2">
-              <div class="progress-info">
-                <div class="progress-percentage d-flex justify-content-between">
-                  <span class="text-sm font-weight-bold">Orders Processing</span>
-                  <span class="text-sm font-weight-bold">0%</span>
-                </div>
-              </div>
-              <div class="progress">
-                <div class="progress-bar bg-gradient-light" role="progressbar" aria-valuenow="0" aria-valuemin="0"
-                  aria-valuemax="100" style="width: 0%;"></div>
-              </div>
-            </div>
-            <div class="progress-wrapper my-2">
-              <div class="progress-info">
-                <div class="progress-percentage d-flex justify-content-between">
-                  <span class="text-sm font-weight-bold">Other Statuses</span>
-                  <span class="text-sm font-weight-bold">0%</span>
-                </div>
-              </div>
-              <div class="progress">
-                <div class="progress-bar bg-gradient-primary" role="progressbar" aria-valuenow="0" aria-valuemin="0"
-                  aria-valuemax="100" style="width: 0%;"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </aside>
-    <main class="main-content mt-1 border-radius-lg" id="content">
-      <!-- Navbar -->
-      <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
-        navbar-scroll="true">
-        <div class="container-fluid py-1 px-3">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-              <li class="breadcrumb-item text-sm "><a class=" opacity-5 text-dark " href="http://demos.jhom.co/oc-ashvira-ui-dashboard/common/dashboard.html">Home</a></li>
-              <li class="breadcrumb-item text-sm  text-dark active "><a class="" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/common/dashboard.html">Dashboard</a></li>
-            </ol>
-            <h6 class="font-weight-bolder mb-0">Dashboard</h6>
-          </nav>
-          <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
-            <div class="ms-md-auto pe-md-3 d-flex align-items-center dropdown">
-              <a href="javascript:;" class="nav-link text-body font-weight-bold p-0 d-flex align-items-center" id="dropdownMenuButton"
-                data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="http://localhost/Framework/OCs/image/cache/profile-45x45.png" alt="John Doe" title="admin" id="user-profile" class="avatar avatar-sm shadow me-2">
-              <span class="d-sm-inline d-none font-weight-bold">John Doe &nbsp;</span>
-              <i class="fas fa-caret-down me-1"></i>
-              </a>
-              <ul class="dropdown-menu dropdown-menu-start px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
-                <li class="mb-2">
-                  <a class="dropdown-item border-radius-md" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/common/profile.html">
-                    <div class="d-flex py-1">
-                      <div class="avatar avatar-sm bg-gradient-secondary me-3 my-auto">
-                        <i class="far fa-user-circle fa-fw"></i>
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="text-sm font-weight-normal mb-1">Your Profile</h6>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <hr class="horizontal dark mt-0">
-                <h6 class="dropdown-header text-sm font-weight-bold">Stores</h6>
-                <li>
-                  <a class="dropdown-item border-radius-md" href="https://demo.opencart.com/?utm_source=Ashvira-UI-Dashboard&utm_medium=Demo-Ashvira-UI-Dashboard" target="_blank">
-                    <div class="d-flex py-1">
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="text-sm font-weight-normal mb-1">Your Store</h6>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <hr class="horizontal dark mt-0">
-                <h6 class="dropdown-header text-sm font-weight-bold">Help</h6>
-                <li>
-                  <a class="dropdown-item border-radius-md" href="https://www.opencart.com?utm_source=Ashvira-UI-Dashboard&utm_medium=Demo-Ashvira-UI-Dashboard" target="_blank">
-                    <div class="d-flex py-1">
-                      <div class="me-3 my-auto">
-                        <i class="fab fa-opencart"></i>
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="text-sm font-weight-normal mb-1">OpenCart Homepage</h6>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item border-radius-md" href="http://docs.opencart.com?utm_source=Ashvira-UI-Dashboard&utm_medium=Demo-Ashvira-UI-Dashboard" target="_blank">
-                    <div class="d-flex py-1">
-                      <div class="me-3 my-auto">
-                        <i class="far fa-file-alt"></i>
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="text-sm font-weight-normal mb-1">Documentation</h6>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item border-radius-md" href="https://forum.opencart.com?utm_source=Ashvira-UI-Dashboard&utm_medium=Demo-Ashvira-UI-Dashboard" target="_blank">
-                    <div class="d-flex py-1">
-                      <div class="me-3 my-auto">
-                        <i class="far fa-comments"></i>
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="text-sm font-weight-normal mb-1">Support Forum</h6>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <ul class="navbar-nav  justify-content-end">
-              <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
-                <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
-                  <div class="sidenav-toggler-inner">
-                    <i class="sidenav-toggler-line"></i>
-                    <i class="sidenav-toggler-line"></i>
-                    <i class="sidenav-toggler-line"></i>
+                  <div class="collapse" id="collapse6">
+                     <ul class="nav">
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/marketing/marketing.html">
+                           <span class="nav-link-text ms-1">Marketing</span>
+                           </a>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/marketing/coupon.html">
+                           <span class="nav-link-text ms-1">Coupons</span>
+                           </a>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/marketing/contact.html">
+                           <span class="nav-link-text ms-1">Mail</span>
+                           </a>
+                        </li>
+                     </ul>
                   </div>
-                </a>
-              </li>
-              <li class="nav-item px-3 d-flex align-items-center">
-                <a href="javascript:;" class="nav-link text-body p-0" id="button-developer" title="Developer Setting" data-loading-text="Loading..." data-bs-toggle="tooltip" data-bs-placement="top" data-container="body" data-animation="true" >
-                <i class="fas fa-cog fixed-plugin-button-nav cursor-pointer"></i>
-                </a>
-              </li>
-              <li class="nav-item pe-2 d-flex align-items-center">
-                <a href="http://demos.jhom.co/oc-ashvira-ui-dashboard/common/login.html" class="nav-link text-body font-weight-bold px-0">
-                <i class="fas fa-sign-out-alt cursor-pointer"></i>
-                <span class="d-sm-inline d-none">Logout</span>
-                </a>
-              </li>
+               </li>
+               <li class="nav-item" id="menu-system">
+                  <a class="nav-link" data-bs-toggle="collapse" href="#collapse7">
+                     <div
+                        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa fa-cog"></i>
+                     </div>
+                     <span class="nav-link-text ms-1">
+                     <span>System</span>
+                     </span>
+                  </a>
+                  <div class="collapse" id="collapse7">
+                     <ul class="nav">
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/setting/store.html">
+                           <span class="nav-link-text ms-1">Settings</span>
+                           </a>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" data-bs-toggle="collapse" href="#collapse7-1">
+                           <span class="nav-link-text ms-1">
+                           <span>Users</span>
+                           </span>
+                           </a>
+                           <div class="collapse" id="collapse7-1">
+                              <ul class="nav">
+                                 <li class="nav-item ">
+                                    <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/user/user.html">
+                                    <span class="nav-link-text ms-1">Users</span>
+                                    </a>
+                                 </li>
+                                 <li class="nav-item ">
+                                    <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/user/user_permission.html">
+                                    <span class="nav-link-text ms-1">User Groups</span>
+                                    </a>
+                                 </li>
+                                 <li class="nav-item ">
+                                    <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/user/api.html">
+                                    <span class="nav-link-text ms-1">API</span>
+                                    </a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" data-bs-toggle="collapse" href="#collapse7-2">
+                           <span class="nav-link-text ms-1">
+                           <span>Localisation</span>
+                           </span>
+                           </a>
+                           <div class="collapse" id="collapse7-2">
+                              <ul class="nav">
+                                 <li class="nav-item ">
+                                    <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/location.html">
+                                    <span class="nav-link-text ms-1">Store Location</span>
+                                    </a>
+                                 </li>
+                                 <li class="nav-item ">
+                                    <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/language.html">
+                                    <span class="nav-link-text ms-1">Languages</span>
+                                    </a>
+                                 </li>
+                                 <li class="nav-item ">
+                                    <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/currency.html">
+                                    <span class="nav-link-text ms-1">Currencies</span>
+                                    </a>
+                                 </li>
+                                 <li class="nav-item ">
+                                    <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/stock_status.html">
+                                    <span class="nav-link-text ms-1">Stock Statuses</span>
+                                    </a>
+                                 </li>
+                                 <li class="nav-item ">
+                                    <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/order_status.html">
+                                    <span class="nav-link-text ms-1">Order Statuses</span>
+                                    </a>
+                                 </li>
+                                 <li class="nav-item ">
+                                    <a class="nav-link" data-bs-toggle="collapse" href="#collapse-7-2-5">
+                                    <span class="nav-link-text ms-1">
+                                    <span>Returns</span>
+                                    </span>
+                                    </a>
+                                    <div class="collapse" id="collapse-7-2-5">
+                                       <ul class="nav">
+                                          <li class="nav-item ">
+                                             <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/return_status.html">
+                                             <span class="nav-link-text ms-1">Return Statuses</span>
+                                             </a>
+                                          </li>
+                                          <li class="nav-item ">
+                                             <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/return_action.html">
+                                             <span class="nav-link-text ms-1">Return Actions</span>
+                                             </a>
+                                          </li>
+                                          <li class="nav-item ">
+                                             <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/return_reason.html">
+                                             <span class="nav-link-text ms-1">Return Reasons</span>
+                                             </a>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                 </li>
+                                 <li class="nav-item ">
+                                    <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/country.html">
+                                    <span class="nav-link-text ms-1">Countries</span>
+                                    </a>
+                                 </li>
+                                 <li class="nav-item ">
+                                    <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/zone.html">
+                                    <span class="nav-link-text ms-1">Zones</span>
+                                    </a>
+                                 </li>
+                                 <li class="nav-item ">
+                                    <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/geo_zone.html">
+                                    <span class="nav-link-text ms-1">Geo Zones</span>
+                                    </a>
+                                 </li>
+                                 <li class="nav-item ">
+                                    <a class="nav-link" data-bs-toggle="collapse" href="#collapse-7-2-9">
+                                    <span class="nav-link-text ms-1">
+                                    <span>Taxes</span>
+                                    </span>
+                                    </a>
+                                    <div class="collapse" id="collapse-7-2-9">
+                                       <ul class="nav">
+                                          <li class="nav-item ">
+                                             <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/tax_class.html">
+                                             <span class="nav-link-text ms-1">Tax Classes</span>
+                                             </a>
+                                          </li>
+                                          <li class="nav-item ">
+                                             <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/tax_rate.html">
+                                             <span class="nav-link-text ms-1">Tax Rates</span>
+                                             </a>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                 </li>
+                                 <li class="nav-item ">
+                                    <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/length_class.html">
+                                    <span class="nav-link-text ms-1">Length Classes</span>
+                                    </a>
+                                 </li>
+                                 <li class="nav-item ">
+                                    <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/localisation/weight_class.html">
+                                    <span class="nav-link-text ms-1">Weight Classes</span>
+                                    </a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" data-bs-toggle="collapse" href="#collapse7-3">
+                           <span class="nav-link-text ms-1">
+                           <span>Maintenance</span>
+                           </span>
+                           </a>
+                           <div class="collapse" id="collapse7-3">
+                              <ul class="nav">
+                                 <li class="nav-item ">
+                                    <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/tool/backup.html">
+                                    <span class="nav-link-text ms-1">Backup / Restore</span>
+                                    </a>
+                                 </li>
+                                 <li class="nav-item ">
+                                    <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/tool/upload.html">
+                                    <span class="nav-link-text ms-1">Uploads</span>
+                                    </a>
+                                 </li>
+                                 <li class="nav-item ">
+                                    <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/tool/log.html">
+                                    <span class="nav-link-text ms-1">Error Logs</span>
+                                    </a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                     </ul>
+                  </div>
+               </li>
+               <li class="nav-item" id="menu-report">
+                  <a class="nav-link" data-bs-toggle="collapse" href="#collapse8">
+                     <div
+                        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa fa-bar-chart"></i>
+                     </div>
+                     <span class="nav-link-text ms-1">
+                     <span>Reports</span>
+                     </span>
+                  </a>
+                  <div class="collapse" id="collapse8">
+                     <ul class="nav">
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/report/report.html">
+                           <span class="nav-link-text ms-1">Reports</span>
+                           </a>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/report/online.html">
+                           <span class="nav-link-text ms-1">Who's Online</span>
+                           </a>
+                        </li>
+                        <li class="nav-item ">
+                           <a class="nav-link" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/report/statistics.html">
+                           <span class="nav-link-text ms-1">Statistics</span>
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </li>
             </ul>
-          </div>
-        </div>
-      </nav>
-      <!-- End Navbar -->
-      <div class="container-fluid py-4">
-        <div class="row  mb-4">
-          <div class="col-lg-3 col-sm-6 mb-lg-0 mb-4">
-            <div class="card">
-              <div class="card-body p-3">
-                <div class="row">
-                  <div class="col-8">
-                    <div class="numbers">
-                      <p class="text-sm mb-0 text-capitalize font-weight-bold">Total Orders</p>
-                      <h5 class="font-weight-bolder mb-0">
-                        5
-                      </h5>
-                    </div>
+         </div>
+         <div class="sidenav-footer mx-3 mt-3 pt-3" id="stats">
+            <div class="card card-background shadow-none card-background-mask-info" id="sidenavCard">
+               <div class="full-background" style="background-image: url('https://cdn.jsdelivr.net/gh/creativetimofficial/soft-ui-dashboard@1.0.2/assets/img/curved-images/white-curved.jpeg')">
+               </div>
+               <div class="card-body text-left p-3 w-100">
+                  <div
+                     class="icon icon-shape icon-sm bg-white shadow text-center mb-3 d-flex align-items-center justify-content-center border-radius-md">
+                     <i class="ni ni-diamond text-info text-gradient text-lg top-0" aria-hidden="true" id="sidenavCardIcon"></i>
                   </div>
-                  <div class="col-4 text-end">
-                    <a href="http://demos.jhom.co/oc-ashvira-ui-dashboard/sale/order.html" data-bs-toggle="tooltip" data-bs-placement="top" title="View more..." data-container="body" data-animation="true">
-                      <div class="icon icon-shape bg-gradient-info shadow text-center border-radius-md">
-                        <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
-                      </div>
-                    </a>
+                  <div class="progress-wrapper my-2">
+                     <div class="progress-info">
+                        <div class="progress-percentage d-flex justify-content-between">
+                           <span class="text-sm font-weight-bold">Orders Completed</span>
+                           <span class="text-sm font-weight-bold">0%</span>
+                        </div>
+                     </div>
+                     <div class="progress">
+                        <div class="progress-bar bg-gradient-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                           aria-valuemax="100" style="width: 0%;"></div>
+                     </div>
                   </div>
-                </div>
-              </div>
+                  <div class="progress-wrapper my-2">
+                     <div class="progress-info">
+                        <div class="progress-percentage d-flex justify-content-between">
+                           <span class="text-sm font-weight-bold">Orders Processing</span>
+                           <span class="text-sm font-weight-bold">0%</span>
+                        </div>
+                     </div>
+                     <div class="progress">
+                        <div class="progress-bar bg-gradient-light" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                           aria-valuemax="100" style="width: 0%;"></div>
+                     </div>
+                  </div>
+                  <div class="progress-wrapper my-2">
+                     <div class="progress-info">
+                        <div class="progress-percentage d-flex justify-content-between">
+                           <span class="text-sm font-weight-bold">Other Statuses</span>
+                           <span class="text-sm font-weight-bold">0%</span>
+                        </div>
+                     </div>
+                     <div class="progress">
+                        <div class="progress-bar bg-gradient-primary" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                           aria-valuemax="100" style="width: 0%;"></div>
+                     </div>
+                  </div>
+               </div>
             </div>
-          </div>
-          <div class="col-lg-3 col-sm-6 mb-lg-0 mb-4">
-            <div class="card">
-              <div class="card-body p-3">
-                <div class="row">
-                  <div class="col-8">
-                    <div class="numbers">
-                      <p class="text-sm mb-0 text-capitalize font-weight-bold">Total Sales</p>
-                      <h5 class="font-weight-bolder mb-0">
-                        $1.5K
-                      </h5>
-                    </div>
+         </div>
+      </aside>
+      <main class="main-content mt-1 border-radius-lg" id="content">
+         <!-- Navbar -->
+         <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
+            navbar-scroll="true">
+            <div class="container-fluid py-1 px-3">
+               <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+                     <li class="breadcrumb-item text-sm "><a class=" opacity-5 text-dark " href="http://demos.jhom.co/oc-ashvira-ui-dashboard/common/dashboard.html">Home</a></li>
+                     <li class="breadcrumb-item text-sm  text-dark active "><a class="" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/common/dashboard.html">Dashboard</a></li>
+                  </ol>
+                  <h6 class="font-weight-bolder mb-0">Dashboard</h6>
+               </nav>
+               <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+                  <div class="ms-md-auto pe-md-3 d-flex align-items-center dropdown">
+                     <a href="javascript:;" class="nav-link text-body font-weight-bold p-0 d-flex align-items-center" id="dropdownMenuButton"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                     <img src="http://localhost/Framework/OCs/image/cache/profile-45x45.png" alt="John Doe" title="admin" id="user-profile" class="avatar avatar-sm shadow me-2">
+                     <span class="d-sm-inline d-none font-weight-bold">John Doe &nbsp;</span>
+                     <i class="fas fa-caret-down me-1"></i>
+                     </a>
+                     <ul class="dropdown-menu dropdown-menu-start px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
+                        <li class="mb-2">
+                           <a class="dropdown-item border-radius-md" href="http://demos.jhom.co/oc-ashvira-ui-dashboard/common/profile.html">
+                              <div class="d-flex py-1">
+                                 <div class="avatar avatar-sm bg-gradient-secondary me-3 my-auto">
+                                    <i class="far fa-user-circle fa-fw"></i>
+                                 </div>
+                                 <div class="d-flex flex-column justify-content-center">
+                                    <h6 class="text-sm font-weight-normal mb-1">Your Profile</h6>
+                                 </div>
+                              </div>
+                           </a>
+                        </li>
+                        <hr class="horizontal dark mt-0">
+                        <h6 class="dropdown-header text-sm font-weight-bold">Stores</h6>
+                        <li>
+                           <a class="dropdown-item border-radius-md" href="https://demo.opencart.com/?utm_source=Ashvira-UI-Dashboard&utm_medium=Demo-Ashvira-UI-Dashboard" target="_blank">
+                              <div class="d-flex py-1">
+                                 <div class="d-flex flex-column justify-content-center">
+                                    <h6 class="text-sm font-weight-normal mb-1">Your Store</h6>
+                                 </div>
+                              </div>
+                           </a>
+                        </li>
+                        <hr class="horizontal dark mt-0">
+                        <h6 class="dropdown-header text-sm font-weight-bold">Help</h6>
+                        <li>
+                           <a class="dropdown-item border-radius-md" href="https://www.opencart.com?utm_source=Ashvira-UI-Dashboard&utm_medium=Demo-Ashvira-UI-Dashboard" target="_blank">
+                              <div class="d-flex py-1">
+                                 <div class="me-3 my-auto">
+                                    <i class="fab fa-opencart"></i>
+                                 </div>
+                                 <div class="d-flex flex-column justify-content-center">
+                                    <h6 class="text-sm font-weight-normal mb-1">OpenCart Homepage</h6>
+                                 </div>
+                              </div>
+                           </a>
+                        </li>
+                        <li>
+                           <a class="dropdown-item border-radius-md" href="http://docs.opencart.com?utm_source=Ashvira-UI-Dashboard&utm_medium=Demo-Ashvira-UI-Dashboard" target="_blank">
+                              <div class="d-flex py-1">
+                                 <div class="me-3 my-auto">
+                                    <i class="far fa-file-alt"></i>
+                                 </div>
+                                 <div class="d-flex flex-column justify-content-center">
+                                    <h6 class="text-sm font-weight-normal mb-1">Documentation</h6>
+                                 </div>
+                              </div>
+                           </a>
+                        </li>
+                        <li>
+                           <a class="dropdown-item border-radius-md" href="https://forum.opencart.com?utm_source=Ashvira-UI-Dashboard&utm_medium=Demo-Ashvira-UI-Dashboard" target="_blank">
+                              <div class="d-flex py-1">
+                                 <div class="me-3 my-auto">
+                                    <i class="far fa-comments"></i>
+                                 </div>
+                                 <div class="d-flex flex-column justify-content-center">
+                                    <h6 class="text-sm font-weight-normal mb-1">Support Forum</h6>
+                                 </div>
+                              </div>
+                           </a>
+                        </li>
+                     </ul>
                   </div>
-                  <div class="col-4 text-end">
-                    <a href="http://demos.jhom.co/oc-ashvira-ui-dashboard/sale/order.html" data-bs-toggle="tooltip" data-bs-placement="top" title="View more..." data-container="body" data-animation="true">
-                      <div class="icon icon-shape bg-gradient-info shadow text-center border-radius-md">
-                        <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
+                  <ul class="navbar-nav  justify-content-end">
+                     <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                        <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                           <div class="sidenav-toggler-inner">
+                              <i class="sidenav-toggler-line"></i>
+                              <i class="sidenav-toggler-line"></i>
+                              <i class="sidenav-toggler-line"></i>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="nav-item px-3 d-flex align-items-center">
+                        <a href="javascript:;" class="nav-link text-body p-0" id="button-developer" title="Developer Setting" data-loading-text="Loading..." data-bs-toggle="tooltip" data-bs-placement="top" data-container="body" data-animation="true" >
+                        <i class="fas fa-cog fixed-plugin-button-nav cursor-pointer"></i>
+                        </a>
+                     </li>
+                     <li class="nav-item pe-2 d-flex align-items-center">
+                        <a href="http://demos.jhom.co/oc-ashvira-ui-dashboard/common/login.html" class="nav-link text-body font-weight-bold px-0">
+                        <i class="fas fa-sign-out-alt cursor-pointer"></i>
+                        <span class="d-sm-inline d-none">Logout</span>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
             </div>
-          </div>
-          <div class="col-lg-3 col-sm-6 mb-lg-0 mb-4">
-            <div class="card">
-              <div class="card-body p-3">
-                <div class="row">
-                  <div class="col-8">
-                    <div class="numbers">
-                      <p class="text-sm mb-0 text-capitalize font-weight-bold">Total Customers</p>
-                      <h5 class="font-weight-bolder mb-0">
-                        3
-                      </h5>
-                    </div>
+         </nav>
+         <!-- End Navbar -->
+         <div class="container-fluid py-4">
+            <div class="row  mb-4">
+               <div class="col-lg-3 col-sm-6 mb-lg-0 mb-4">
+                  <div class="card">
+                     <div class="card-body p-3">
+                        <div class="row">
+                           <div class="col-8">
+                              <div class="numbers">
+                                 <p class="text-sm mb-0 text-capitalize font-weight-bold">Total Orders</p>
+                                 <h5 class="font-weight-bolder mb-0">
+                                    5
+                                 </h5>
+                              </div>
+                           </div>
+                           <div class="col-4 text-end">
+                              <a href="http://demos.jhom.co/oc-ashvira-ui-dashboard/sale/order.html" data-bs-toggle="tooltip" data-bs-placement="top" title="View more..." data-container="body" data-animation="true">
+                                 <div class="icon icon-shape bg-gradient-info shadow text-center border-radius-md">
+                                    <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
+                                 </div>
+                              </a>
+                           </div>
+                        </div>
+                     </div>
                   </div>
-                  <div class="col-4 text-end">
-                    <a href="http://demos.jhom.co/oc-ashvira-ui-dashboard/customer/customer.html" data-bs-toggle="tooltip" data-bs-placement="top" title="View more..." data-container="body" data-animation="true">
-                      <div class="icon icon-shape bg-gradient-info shadow text-center border-radius-md">
-                        <i class="ni ni-single-02 text-lg opacity-10" aria-hidden="true"></i>
-                      </div>
-                    </a>
+               </div>
+               <div class="col-lg-3 col-sm-6 mb-lg-0 mb-4">
+                  <div class="card">
+                     <div class="card-body p-3">
+                        <div class="row">
+                           <div class="col-8">
+                              <div class="numbers">
+                                 <p class="text-sm mb-0 text-capitalize font-weight-bold">Total Sales</p>
+                                 <h5 class="font-weight-bolder mb-0">
+                                    $1.5K
+                                 </h5>
+                              </div>
+                           </div>
+                           <div class="col-4 text-end">
+                              <a href="http://demos.jhom.co/oc-ashvira-ui-dashboard/sale/order.html" data-bs-toggle="tooltip" data-bs-placement="top" title="View more..." data-container="body" data-animation="true">
+                                 <div class="icon icon-shape bg-gradient-info shadow text-center border-radius-md">
+                                    <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                                 </div>
+                              </a>
+                           </div>
+                        </div>
+                     </div>
                   </div>
-                </div>
-              </div>
+               </div>
+               <div class="col-lg-3 col-sm-6 mb-lg-0 mb-4">
+                  <div class="card">
+                     <div class="card-body p-3">
+                        <div class="row">
+                           <div class="col-8">
+                              <div class="numbers">
+                                 <p class="text-sm mb-0 text-capitalize font-weight-bold">Total Customers</p>
+                                 <h5 class="font-weight-bolder mb-0">
+                                    3
+                                 </h5>
+                              </div>
+                           </div>
+                           <div class="col-4 text-end">
+                              <a href="http://demos.jhom.co/oc-ashvira-ui-dashboard/customer/customer.html" data-bs-toggle="tooltip" data-bs-placement="top" title="View more..." data-container="body" data-animation="true">
+                                 <div class="icon icon-shape bg-gradient-info shadow text-center border-radius-md">
+                                    <i class="ni ni-single-02 text-lg opacity-10" aria-hidden="true"></i>
+                                 </div>
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-sm-6 mb-lg-0 mb-4">
+                  <div class="card">
+                     <div class="card-body p-3">
+                        <div class="row">
+                           <div class="col-8">
+                              <div class="numbers">
+                                 <p class="text-sm mb-0 text-capitalize font-weight-bold">People Online</p>
+                                 <h5 class="font-weight-bolder mb-0">
+                                    1
+                                 </h5>
+                              </div>
+                           </div>
+                           <div class="col-4 text-end">
+                              <a href="http://demos.jhom.co/oc-ashvira-ui-dashboard/report/online.html" data-bs-toggle="tooltip" data-bs-placement="top" title="View more..." data-container="body" data-animation="true">
+                                 <div class="icon icon-shape bg-gradient-info shadow text-center border-radius-md">
+                                    <i class="fas fa-users text-lg opacity-10" aria-hidden="true"></i>
+                                 </div>
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-          </div>
-          <div class="col-lg-3 col-sm-6 mb-lg-0 mb-4">
-            <div class="card">
-              <div class="card-body p-3">
-                <div class="row">
-                  <div class="col-8">
-                    <div class="numbers">
-                      <p class="text-sm mb-0 text-capitalize font-weight-bold">People Online</p>
-                      <h5 class="font-weight-bolder mb-0">
-                        1
-                      </h5>
-                    </div>
+            <div class="row mt-4 mb-4">
+               <div class="col-lg-6 col-sm-12 mb-lg-0 mb-4">
+                  <div class="card h-100">
+                     <div class="card-header pb-0">
+                        <h6 class="text-info text-lg"><i class="fas fa-globe"></i> World Map</h6>
+                     </div>
+                     <div class="card-body p-3 border-top">
+                        <div id="vmap" style="width: 100%; height: 300px;"></div>
+                     </div>
                   </div>
-                  <div class="col-4 text-end">
-                    <a href="http://demos.jhom.co/oc-ashvira-ui-dashboard/report/online.html" data-bs-toggle="tooltip" data-bs-placement="top" title="View more..." data-container="body" data-animation="true">
-                      <div class="icon icon-shape bg-gradient-info shadow text-center border-radius-md">
-                        <i class="fas fa-users text-lg opacity-10" aria-hidden="true"></i>
-                      </div>
-                    </a>
+                  <link type="text/css" href="https://demo.opencart.com/admin/view/javascript/jquery/jqvmap/jqvmap.css" rel="stylesheet" media="screen" />
+                  <script src="https://demo.opencart.com/admin/view/javascript/jquery/jqvmap/jquery.vmap.js"></script> 
+                  <script src="https://demo.opencart.com/admin/view/javascript/jquery/jqvmap/maps/jquery.vmap.world.js"></script> 
+                  <script><!--
+                     $(document).ready(function() {
+                     	$.ajax({
+                     		url: 'https://demos.jhom.co/oc-ashvira-ui-dashboard/data/dummy_dashboard_map.json',
+                     		dataType: 'json',
+                     		success: function(json) {
+                     			data = [];
+                     						
+                     			for (i in json) {
+                     				data[i] = json[i]['total'];
+                     			}
+                     					
+                     			$('#vmap').vectorMap({
+                     				map: 'world_en',
+                     				backgroundColor: '#FFFFFF',
+                     				borderColor: '#FFFFFF',
+                     				color: '#9FD5F1',
+                     				hoverOpacity: 0.7,
+                     				selectedColor: '#666666',
+                     				enableZoom: true,
+                     				showTooltip: true,
+                     				values: data,
+                     				normalizeFunction: 'polynomial',
+                     				onLabelShow: function(event, label, code) {
+                     					if (json[code]) {
+                     						label.html('<strong>' + label.text() + '</strong><br />' + 'Orders ' + json[code]['total'] + '<br />' + 'Sales ' + json[code]['amount']);
+                     					}
+                     				}
+                     			});			
+                     		},
+                             error: function(xhr, ajaxOptions, thrownError) {
+                                 alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                             }
+                     	});			
+                     });
+                     //-->
+                  </script>
+               </div>
+               <div class="col-lg-6 col-sm-12 mb-lg-0 mb-4">
+                  <div class="card h-100">
+                     <div class="card-header pb-0">
+                        <div class="d-flex justify-content-between">
+                           <h6 class="text-info text-lg"><i class="fas fa-chart-bar"></i> Sales Analytics</h6>
+                           <div class="dropdownfdsf">
+                              <a type="button" id="chartInfoDropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                              <i class="far fa-calendar-alt"></i>
+                              <i class="fas fa-caret-down me-2"></i>
+                              </a>
+                              <ul id="range" class="dropdown-menu dropdown-menu-end" aria-labelledby="chartInfoDropdownMenu">
+                                 <li><a class="dropdown-item" href="day">Today</a></li>
+                                 <li><a class="dropdown-item" href="week">Week</a></li>
+                                 <li><a class="dropdown-item active bg-gradient-info" href="month">Month</a></li>
+                                 <li><a class="dropdown-item" href="year">Year</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="card-body p-3 border-top">
+                        <div class="chart">
+                           <canvas id="chart-line" class="chart-canvas h-100" height="300px"></canvas>
+                        </div>
+                     </div>
                   </div>
-                </div>
-              </div>
+                  <script src="https://cdn.jsdelivr.net/gh/creativetimofficial/soft-ui-dashboard@1.0.2/assets/js/plugins/chartjs.min.js"></script>
+                  <script src="view/javascript/ashvira_plugins/Chart.extension.js"></script>
+                  <script>
+                     $('#range a').on('click', function(e) {
+                     	e.preventDefault();
+                     	
+                     	$(this).parent().parent().find('a').removeClass('active bg-gradient-info');
+                     	$(this).addClass('active bg-gradient-info');
+                     
+                     	$('#chart-line').remove();
+                     	$('.chart').html('<canvas id="chart-line" class="chart-canvas h-100" height="300px"></canvas>');
+                     
+                     	$.ajax({
+                     		type: 'get',
+                     		url: 'https://demos.jhom.co/oc-ashvira-ui-dashboard/data/dummy_dashboard_chart_' + $(this).attr('href') + '.json',
+                     		dataType: 'json',
+                     		success: function(json) {
+                     		  if (typeof json['order'] == 'undefined') { return false; }
+                     
+                     		  let chartXaxesData  = [];
+                     		  let chartCustomerData  = [];
+                     		  let chartOrderData  = [];
+                     
+                     		  let mera = json['xaxis']; 
+                     		  mera.forEach((item, index)=>{
+                     			chartXaxesData[index] = item[1];
+                     		  });
+                     
+                     		  mera = json['customer']['data'];
+                     		  mera.forEach((item, index)=>{
+                     			chartCustomerData[index] = +item[1];
+                     		  });
+                     
+                     		  mera = json['order']['data'];
+                     		  mera.forEach((item, index)=>{
+                     			chartOrderData[index] = +item[1];
+                     		  });
+                     
+                     		  chartOrderMin = Math.min(...chartOrderData);
+                     		  chartCustomerMin = Math.min(...chartCustomerData);
+                     
+                     		  chartOrderMax = Math.max(...chartOrderData);
+                     		  chartCustomerMax = Math.max(...chartCustomerData);
+                     
+                     		  chartForGraph = {
+                     			"xAxes" : chartXaxesData,
+                     			"customer": { "label": json['customer']['label'], "data": chartCustomerData },
+                     			"order": {"label": json['order']['label'], "data": chartOrderData },
+                     			"min": Math.min(chartOrderMin, chartCustomerMin),
+                     			"max": Math.max(chartOrderMax, chartOrderMax)
+                     		  };
+                     		  
+                     		  var ctx2 = document.getElementById("chart-line").getContext("2d");
+                     
+                     		  var gradientStroke1 = ctx2.createLinearGradient(0, 230, 0, 50);
+                     
+                     		  gradientStroke1.addColorStop(1, 'rgba(203,12,159,0.2)');
+                     		  gradientStroke1.addColorStop(0.2, 'rgba(72,72,176,0.0)');
+                     		  gradientStroke1.addColorStop(0, 'rgba(203,12,159,0)'); //purple colors
+                     
+                     		  var gradientStroke2 = ctx2.createLinearGradient(0, 230, 0, 50);
+                     
+                     		  gradientStroke2.addColorStop(1, 'rgba(20,23,39,0.2)');
+                     		  gradientStroke2.addColorStop(0.2, 'rgba(72,72,176,0.0)');
+                     		  gradientStroke2.addColorStop(0, 'rgba(20,23,39,0)'); //purple colors
+                     
+                     		  new Chart(ctx2, {
+                     			type: "line",
+                     			data: {
+                     				labels: chartForGraph['xAxes'],
+                     				datasets: [{
+                     					label: chartForGraph['customer']['label'],
+                     					tension: 0.4,
+                     					borderWidth: 0,
+                     					pointRadius: 0,
+                     					borderColor: "#cb0c9f",
+                     					borderWidth: 3,
+                     					backgroundColor: gradientStroke1,
+                     					data: chartForGraph['customer']['data'],
+                     					maxBarThickness: 6
+                     
+                     				},
+                     				{
+                     					label: chartForGraph['order']['label'],
+                     					tension: 0.4,
+                     					borderWidth: 0,
+                     					pointRadius: 0,
+                     					borderColor: "#3A416F",
+                     					borderWidth: 3,
+                     					backgroundColor: gradientStroke2,
+                     					data: chartForGraph['order']['data'],
+                     					maxBarThickness: 6
+                     
+                     				},
+                     				],
+                     			},
+                     			options: {
+                     				responsive: true,
+                     				maintainAspectRatio: false,
+                     				legend: {
+                     					display: false,
+                     				},
+                     				tooltips: {
+                     					enabled: true,
+                     					mode: "index",
+                     					intersect: false,
+                     				},
+                     				scales: {
+                     					yAxes: [{
+                     							gridLines: {
+                     							borderDash: [2],
+                     							borderDashOffset: [2],
+                     							color: '#dee2e6',
+                     							zeroLineColor: '#dee2e6',
+                     							zeroLineWidth: 1,
+                     							zeroLineBorderDash: [2],
+                     							drawBorder: false,
+                     						},
+                     						ticks: {
+                     							suggestedMin: 0,
+                     							suggestedMax: 3,
+                     							beginAtZero: true,
+                     							padding: 10,
+                     							fontSize: 11,
+                     							fontColor: '#adb5bd',
+                     							lineHeight: 3,
+                     							fontStyle: 'normal',
+                     							fontFamily: "Open Sans",
+                     						},
+                     					},],
+                     					xAxes: [{
+                     							gridLines: {
+                     							zeroLineColor: 'rgba(0,0,0,0)',
+                     							display: false,
+                     						},
+                     						ticks: {
+                     							padding: 10,
+                     							fontSize: 11,
+                     							fontColor: '#adb5bd',
+                     							lineHeight: 3,
+                     							fontStyle: 'normal',
+                     							fontFamily: "Open Sans",
+                     						},
+                     					},],
+                     				},
+                     			},
+                     			});
+                     		},
+                             error: function(xhr, ajaxOptions, thrownError) {
+                                alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                             }
+                     	});
+                     
+                     
+                     });
+                     
+                     $('#range a.active').trigger('click');
+                  </script>
+               </div>
             </div>
-          </div>
-        </div>
-        <div class="row mt-4 mb-4">
-          <div class="col-lg-6 col-sm-12 mb-lg-0 mb-4">
-            <div class="card h-100">
-              <div class="card-header pb-0">
-                <h6 class="text-info text-lg"><i class="fas fa-globe"></i> World Map</h6>
-              </div>
-              <div class="card-body p-3 border-top">
-                <div id="vmap" style="width: 100%; height: 300px;"></div>
-              </div>
-            </div>
-            <link type="text/css" href="https://demo.opencart.com/admin/view/javascript/jquery/jqvmap/jqvmap.css" rel="stylesheet" media="screen" />
-            <script src="https://demo.opencart.com/admin/view/javascript/jquery/jqvmap/jquery.vmap.js"></script> 
-            <script src="https://demo.opencart.com/admin/view/javascript/jquery/jqvmap/maps/jquery.vmap.world.js"></script> 
-            <script><!--
-              $(document).ready(function() {
-              	$.ajax({
-              		url: 'index.php?route=extension/dashboard/map/map&user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS',
-              		dataType: 'json',
-              		success: function(json) {
-              			data = [];
-              						
-              			for (i in json) {
-              				data[i] = json[i]['total'];
-              			}
-              					
-              			$('#vmap').vectorMap({
-              				map: 'world_en',
-              				backgroundColor: '#FFFFFF',
-              				borderColor: '#FFFFFF',
-              				color: '#9FD5F1',
-              				hoverOpacity: 0.7,
-              				selectedColor: '#666666',
-              				enableZoom: true,
-              				showTooltip: true,
-              				values: data,
-              				normalizeFunction: 'polynomial',
-              				onLabelShow: function(event, label, code) {
-              					if (json[code]) {
-              						label.html('<strong>' + label.text() + '</strong><br />' + 'Orders ' + json[code]['total'] + '<br />' + 'Sales ' + json[code]['amount']);
-              					}
-              				}
-              			});			
-              		},
-                      error: function(xhr, ajaxOptions, thrownError) {
-                          alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
-                      }
-              	});			
-              });
-              //-->
-            </script>
-          </div>
-          <div class="col-lg-6 col-sm-12 mb-lg-0 mb-4">
-            <div class="card h-100">
-              <div class="card-header pb-0">
-                <div class="d-flex justify-content-between">
-                  <h6 class="text-info text-lg"><i class="fas fa-chart-bar"></i> Sales Analytics</h6>
-                  <div class="dropdownfdsf">
-                    <a type="button" id="chartInfoDropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="far fa-calendar-alt"></i>
-                    <i class="fas fa-caret-down me-2"></i>
-                    </a>
-                    <ul id="range" class="dropdown-menu dropdown-menu-end" aria-labelledby="chartInfoDropdownMenu">
-                      <li><a class="dropdown-item" href="day">Today</a></li>
-                      <li><a class="dropdown-item" href="week">Week</a></li>
-                      <li><a class="dropdown-item active bg-gradient-info" href="month">Month</a></li>
-                      <li><a class="dropdown-item" href="year">Year</a></li>
-                    </ul>
+            <div class="row mt-4 ">
+               <div class="col-lg-4 col-sm-12 mb-lg-0 mb-4">
+                  <div class="card h-100">
+                     <div class="card-header pb-0">
+                        <h6 class="text-info text-lg"><i class="fas fa-calendar-alt"></i> Recent Activity</h6>
+                     </div>
+                     <div class="card-body p-3">
+                        <div class="timeline timeline-one-side">
+                           <div class="timeline-block mb-3">
+                              <span class="timeline-step">
+                              <i class="fas fa-user-shield text-info text-gradient" data-bs-toggle="tooltip" data-bs-placement="top" title="Login" data-container="body" data-animation="true"></i>
+                              </span>
+                              <div class="timeline-content">
+                                 <h6 class="text-dark text-sm mb-0"><a href="http://localhost/Framework/OCs/admin/index.php?route=customer/customer/edit&amp;user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS&amp;customer_id=1">Sharda Sharma</a> logged in.</h6>
+                                 <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">17/05/2021 12:26:51</p>
+                              </div>
+                           </div>
+                           <div class="timeline-block mb-3">
+                              <span class="timeline-step">
+                              <i class="fas fa-user-check text-success text-gradient" data-bs-toggle="tooltip" data-bs-placement="top" title="Customer Order" data-container="body" data-animation="true"></i>
+                              </span>
+                              <div class="timeline-content">
+                                 <h6 class="text-dark text-sm mb-0"><a href="http://localhost/Framework/OCs/admin/index.php?route=customer/customer/edit&amp;user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS&amp;customer_id=1">Sudeep Dey</a> added a <a href="http://localhost/Framework/OCs/admin/index.php?route=sale/order/info&amp;user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS&amp;order_id=7">new order</a>.</h6>
+                                 <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">16/05/2021 04:53:07</p>
+                              </div>
+                           </div>
+                           <div class="timeline-block mb-3">
+                              <span class="timeline-step">
+                              <i class="fas fa-lock text-warning text-gradient" data-bs-toggle="tooltip" data-bs-placement="top" title="Password Changed" data-container="body" data-animation="true"></i>
+                              </span>
+                              <div class="timeline-content">
+                                 <h6 class="text-dark text-sm mb-0"><a href="http://localhost/Framework/OCs/admin/index.php?route=customer/customer/edit&amp;user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS&amp;customer_id=1">Huma Bagde</a> updated their account password.</h6>
+                                 <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">13/05/2021 12:27:53</p>
+                              </div>
+                           </div>
+                           <div class="timeline-block mb-3">
+                              <span class="timeline-step">
+                              <i class="fas fa-user-cog text-primary text-gradient" data-bs-toggle="tooltip" data-bs-placement="top" title="Password Reset" data-container="body" data-animation="true"></i>
+                              </span>
+                              <div class="timeline-content">
+                                 <h6 class="text-dark text-sm mb-0"><a href="http://localhost/Framework/OCs/admin/index.php?route=customer/customer/edit&amp;user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS&amp;customer_id=1">Divyani Upare</a> reset their account password.</h6>
+                                 <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">13/05/2021 12:27:08</p>
+                              </div>
+                           </div>
+                           <div class="timeline-block ">
+                              <span class="timeline-step">
+                              <i class="fas fa-user-plus text-info text-gradient" data-bs-toggle="tooltip" data-bs-placement="top" title="New Customer" data-container="body" data-animation="true"></i>
+                              </span>
+                              <div class="timeline-content">
+                                 <h6 class="text-dark text-sm mb-0"><a href="http://localhost/Framework/OCs/admin/index.php?route=customer/customer/edit&amp;user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS&amp;customer_id=0">Sakshi Gupta</a> registered a new account.</h6>
+                                 <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">13/05/2021 11:26:29</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="card-body p-3 border-top">
-                <div class="chart">
-                  <canvas id="chart-line" class="chart-canvas h-100" height="300px"></canvas>
-                </div>
-              </div>
+               </div>
+               <div class="col-lg-8 col-sm-12 mb-lg-0 mb-4">
+                  <div class="card h-100">
+                     <div class="card-header pb-0">
+                        <h6 class="text-info text-lg"><i class="fas fa-shopping-cart"></i> Latest Orders</h6>
+                     </div>
+                     <div class="card-body px-0 pt-0 pb-2">
+                        <div class="table-responsive p-0">
+                           <table class="table align-items-center justify-content-center mb-0">
+                              <thead>
+                                 <tr>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Order ID</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Customer</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Status</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Date Added</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Total</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Action</th>
+                                    <th></th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td class="align-right">
+                                       <h6 class="ms-2 mb-0 text-xs font-weight-bold mb-0">5</h6>
+                                    </td>
+                                    <td>
+                                       <p class="font-weight-bold mb-0">Hira Hiwarkar</p>
+                                    </td>
+                                    <td>
+                                       <span class="text-sm font-weight-bold">Complete</span>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                       <span class="text-xs font-weight-bold">16/05/2021</span>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                       <span class="text-lg font-weight-bold">$1,055.00</span>
+                                    </td>
+                                    <td class="align-middle">
+                                       <a class="btn btn-link text-secondary mb-0" href="http://localhost/Framework/OCs/admin/index.php?route=sale/order/info&amp;user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS&amp;order_id=5" data-bs-toggle="tooltip" data-bs-placement="top" title="View" data-container="body" data-animation="true">
+                                       <i class="fas fa-eye text-lg"></i>
+                                       </a>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="align-right">
+                                       <h6 class="ms-2 mb-0 text-xs font-weight-bold mb-0">2</h6>
+                                    </td>
+                                    <td>
+                                       <p class="font-weight-bold mb-0">Chetna Upare</p>
+                                    </td>
+                                    <td>
+                                       <span class="text-sm font-weight-bold">Complete</span>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                       <span class="text-xs font-weight-bold">16/05/2021</span>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                       <span class="text-lg font-weight-bold">$105.00</span>
+                                    </td>
+                                    <td class="align-middle">
+                                       <a class="btn btn-link text-secondary mb-0" href="http://localhost/Framework/OCs/admin/index.php?route=sale/order/info&amp;user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS&amp;order_id=2" data-bs-toggle="tooltip" data-bs-placement="top" title="View" data-container="body" data-animation="true">
+                                       <i class="fas fa-eye text-lg"></i>
+                                       </a>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="align-right">
+                                       <h6 class="ms-2 mb-0 text-xs font-weight-bold mb-0">4</h6>
+                                    </td>
+                                    <td>
+                                       <p class="font-weight-bold mb-0">Farheen Mehta</p>
+                                    </td>
+                                    <td>
+                                       <span class="text-sm font-weight-bold">Complete</span>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                       <span class="text-xs font-weight-bold">13/05/2021</span>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                       <span class="text-lg font-weight-bold">$105.00</span>
+                                    </td>
+                                    <td class="align-middle">
+                                       <a class="btn btn-link text-secondary mb-0" href="http://localhost/Framework/OCs/admin/index.php?route=sale/order/info&amp;user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS&amp;order_id=4" data-bs-toggle="tooltip" data-bs-placement="top" title="View" data-container="body" data-animation="true">
+                                       <i class="fas fa-eye text-lg"></i>
+                                       </a>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="align-right">
+                                       <h6 class="ms-2 mb-0 text-xs font-weight-bold mb-0">3</h6>
+                                    </td>
+                                    <td>
+                                       <p class="font-weight-bold mb-0">Shailesh Qureshi</p>
+                                    </td>
+                                    <td>
+                                       <span class="text-sm font-weight-bold">Complete</span>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                       <span class="text-xs font-weight-bold">12/05/2021</span>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                       <span class="text-lg font-weight-bold">$106.00</span>
+                                    </td>
+                                    <td class="align-middle">
+                                       <a class="btn btn-link text-secondary mb-0" href="http://localhost/Framework/OCs/admin/index.php?route=sale/order/info&amp;user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS&amp;order_id=3" data-bs-toggle="tooltip" data-bs-placement="top" title="View" data-container="body" data-animation="true">
+                                       <i class="fas fa-eye text-lg"></i>
+                                       </a>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="align-right">
+                                       <h6 class="ms-2 mb-0 text-xs font-weight-bold mb-0">1</h6>
+                                    </td>
+                                    <td>
+                                       <p class="font-weight-bold mb-0">Sakshi Jiwane</p>
+                                    </td>
+                                    <td>
+                                       <span class="text-sm font-weight-bold">Canceled</span>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                       <span class="text-xs font-weight-bold">12/05/2021</span>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                       <span class="text-lg font-weight-bold">$106.45</span>
+                                    </td>
+                                    <td class="align-middle">
+                                       <a class="btn btn-link text-secondary mb-0" href="http://localhost/Framework/OCs/admin/index.php?route=sale/order/info&amp;user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS&amp;order_id=1" data-bs-toggle="tooltip" data-bs-placement="top" title="View" data-container="body" data-animation="true">
+                                       <i class="fas fa-eye text-lg"></i>
+                                       </a>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-            <script src="https://cdn.jsdelivr.net/gh/creativetimofficial/soft-ui-dashboard@1.0.2/assets/js/plugins/chartjs.min.js"></script>
-            <script src="view/javascript/ashvira_plugins/Chart.extension.js"></script>
+            <footer class="footer pt-3">
+               <div class="container-fluid">
+                  <div class="row align-items-center justify-content-lg-between">
+                     <div class="col-lg-6 mb-lg-0 mb-4">
+                        <div class="copyright text-center text-sm text-muted text-lg-left">&copy; 2021, Theme made with <i class="fa fa-heart"></i> by <a href="https://jhom.co#about" class="font-weight-bold" target="_blank">Nexa Domain</a> for <a href="http://www.opencart.com">OpenCart</a></div>
+                     </div>
+                     <div class="col-lg-6">
+                        <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                           <li class="nav-item">
+                              <a href="https://github.com/nexadomain/oc-ashvira-admin/blob/main/README.md" class="nav-link text-muted" target="_blank">Documentation</a>
+                           </li>
+                           <li class="nav-item">
+                              <a href="https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=41905" class="nav-link text-muted" target="_blank">Marketplace</a>
+                           </li>
+                           <li class="nav-item">
+                              <a href="https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=41905" class="nav-link text-muted" target="_blank">Upgrade to Pro</a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </footer>
+            <div id="modal-security" class="modal" tabindex="-1">
+               <div class="modal-dialog">
+                  <div class="modal-content">
+                     <div class="modal-header">
+                        <h5 class="modal-title text-danger"><i class="fas fa-exclamation-triangle"></i> Important Security Notification!</h5>
+                        <button type="button" class="btn-close bg-warning" data-bs-dismiss="modal" aria-label="Close"></button>
+                     </div>
+                     <div class="modal-body">
+                        <div class="alert alert-warning" role="alert">
+                           <i class="fas fa-exclamation-circle"></i> It is very imporant that you move the storage directory outside of the web directory (e.g. public_html, www or htdocs).
+                        </div>
+                        <form>
+                           <fieldset>
+                              <legend>Choose how to move the storage directory</legend>
+                              <div class="form-group">
+                                 <select name="type" id="input-type" class="form-control">
+                                    <option value="automatic">Automatically Move</option>
+                                    <option value="manual">Manually Move</option>
+                                 </select>
+                              </div>
+                           </fieldset>
+                           <fieldset id="collapse-automatic" class="collapse">
+                              <legend>Automatically Move</legend>
+                              <div class="form-group">
+                                 <div class="input-group">
+                                    <button id="button-path" class="btn btn-outline-secondary dropdown-toggle mb-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">D:/ProgramFiles/Xampp/</button>
+                                    <ul class="dropdown-menu">
+                                       <li><a href="D:/ProgramFiles/Xampp/htdocs/Framework/OCs/system/" class="dropdown-item"><i class="fas fa-exclamation-triangle text-danger"></i> D:/ProgramFiles/Xampp/htdocs/Framework/OCs/system/</a></li>
+                                       <li><a href="D:/ProgramFiles/Xampp/htdocs/Framework/OCs/" class="dropdown-item"><i class="fas fa-exclamation-triangle text-danger"></i> D:/ProgramFiles/Xampp/htdocs/Framework/OCs/</a></li>
+                                       <li><a href="D:/ProgramFiles/Xampp/htdocs/Framework/" class="dropdown-item"><i class="fas fa-exclamation-triangle text-danger"></i> D:/ProgramFiles/Xampp/htdocs/Framework/</a></li>
+                                       <li><a href="D:/ProgramFiles/Xampp/htdocs/" class="dropdown-item"><i class="fas fa-exclamation-triangle text-danger"></i> D:/ProgramFiles/Xampp/htdocs/</a></li>
+                                       <li><a href="D:/ProgramFiles/Xampp/" class="dropdown-item"><i class="fas fa-check-circle text-success"></i> D:/ProgramFiles/Xampp/</a></li>
+                                       <li><a href="D:/ProgramFiles/" class="dropdown-item"><i class="fas fa-check-circle text-success"></i> D:/ProgramFiles/</a></li>
+                                       <li><a href="D:/" class="dropdown-item"><i class="fas fa-check-circle text-success"></i> D:/</a></li>
+                                    </ul>
+                                    <input type="text" class="form-control px-2" name="directory" value="storage" placeholder="Directory">
+                                    <button class="btn btn-outline-primary mb-0" type="button" id="button-move" data-loading-text="Loading..."><i class="fas fa-exclamation-triangle"></i> Move</button>
+                                 </div>
+                                 <input type="hidden" name="path" value="D:/ProgramFiles/Xampp/" />
+                              </div>
+                           </fieldset>
+                           <fieldset id="collapse-manual" class="collapse">
+                              <legend>Manually Move</legend>
+                              <div class="form-group">
+                                 <div style="height: 300px; overflow-y: scroll;" class="form-control" disabled="disabled"></div>
+                              </div>
+                           </fieldset>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
             <script>
-              $('#range a').on('click', function(e) {
-              	e.preventDefault();
-              	
-              	$(this).parent().parent().find('a').removeClass('active bg-gradient-info');
-              	$(this).addClass('active bg-gradient-info');
-              
-              	$('#chart-line').remove();
-              	$('.chart').html('<canvas id="chart-line" class="chart-canvas h-100" height="300px"></canvas>');
-              
-              	$.ajax({
-              		type: 'get',
-              		url: 'index.php?route=extension/dashboard/chart/chart&user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS&range=' + $(this).attr('href'),
-              		dataType: 'json',
-              		success: function(json) {
-              		  if (typeof json['order'] == 'undefined') { return false; }
+               $(document).ready(function() {
+               	$('#modal-security').modal('show');
+               });
 
-              		  let chartXaxesData  = [];
-              		  let chartCustomerData  = [];
-              		  let chartOrderData  = [];
-              
-              		  let mera = json['xaxis']; 
-              		  mera.forEach((item, index)=>{
-              			chartXaxesData[index] = item[1];
-              		  });
-              
-              		  mera = json['customer']['data'];
-              		  mera.forEach((item, index)=>{
-              			chartCustomerData[index] = +item[1];
-              		  });
-              
-              		  mera = json['order']['data'];
-              		  mera.forEach((item, index)=>{
-              			chartOrderData[index] = +item[1];
-              		  });
-              
-              		  chartOrderMin = Math.min(...chartOrderData);
-              		  chartCustomerMin = Math.min(...chartCustomerData);
-              
-              		  chartOrderMax = Math.max(...chartOrderData);
-              		  chartCustomerMax = Math.max(...chartCustomerData);
-              
-              		  chartForGraph = {
-              			"xAxes" : chartXaxesData,
-              			"customer": { "label": json['customer']['label'], "data": chartCustomerData },
-              			"order": {"label": json['order']['label'], "data": chartOrderData },
-              			"min": Math.min(chartOrderMin, chartCustomerMin),
-              			"max": Math.max(chartOrderMax, chartOrderMax)
-              		  };
-              		  
-              		  var ctx2 = document.getElementById("chart-line").getContext("2d");
-              
-              		  var gradientStroke1 = ctx2.createLinearGradient(0, 230, 0, 50);
-              
-              		  gradientStroke1.addColorStop(1, 'rgba(203,12,159,0.2)');
-              		  gradientStroke1.addColorStop(0.2, 'rgba(72,72,176,0.0)');
-              		  gradientStroke1.addColorStop(0, 'rgba(203,12,159,0)'); //purple colors
-              
-              		  var gradientStroke2 = ctx2.createLinearGradient(0, 230, 0, 50);
-              
-              		  gradientStroke2.addColorStop(1, 'rgba(20,23,39,0.2)');
-              		  gradientStroke2.addColorStop(0.2, 'rgba(72,72,176,0.0)');
-              		  gradientStroke2.addColorStop(0, 'rgba(20,23,39,0)'); //purple colors
-              
-              		  new Chart(ctx2, {
-              			type: "line",
-              			data: {
-              				labels: chartForGraph['xAxes'],
-              				datasets: [{
-              					label: chartForGraph['customer']['label'],
-              					tension: 0.4,
-              					borderWidth: 0,
-              					pointRadius: 0,
-              					borderColor: "#cb0c9f",
-              					borderWidth: 3,
-              					backgroundColor: gradientStroke1,
-              					data: chartForGraph['customer']['data'],
-              					maxBarThickness: 6
-              
-              				},
-              				{
-              					label: chartForGraph['order']['label'],
-              					tension: 0.4,
-              					borderWidth: 0,
-              					pointRadius: 0,
-              					borderColor: "#3A416F",
-              					borderWidth: 3,
-              					backgroundColor: gradientStroke2,
-              					data: chartForGraph['order']['data'],
-              					maxBarThickness: 6
-              
-              				},
-              				],
-              			},
-              			options: {
-              				responsive: true,
-              				maintainAspectRatio: false,
-              				legend: {
-              					display: false,
-              				},
-              				tooltips: {
-              					enabled: true,
-              					mode: "index",
-              					intersect: false,
-              				},
-              				scales: {
-              					yAxes: [{
-              							gridLines: {
-              							borderDash: [2],
-              							borderDashOffset: [2],
-              							color: '#dee2e6',
-              							zeroLineColor: '#dee2e6',
-              							zeroLineWidth: 1,
-              							zeroLineBorderDash: [2],
-              							drawBorder: false,
-              						},
-              						ticks: {
-              							suggestedMin: 0,
-              							suggestedMax: 3,
-              							beginAtZero: true,
-              							padding: 10,
-              							fontSize: 11,
-              							fontColor: '#adb5bd',
-              							lineHeight: 3,
-              							fontStyle: 'normal',
-              							fontFamily: "Open Sans",
-              						},
-              					},],
-              					xAxes: [{
-              							gridLines: {
-              							zeroLineColor: 'rgba(0,0,0,0)',
-              							display: false,
-              						},
-              						ticks: {
-              							padding: 10,
-              							fontSize: 11,
-              							fontColor: '#adb5bd',
-              							lineHeight: 3,
-              							fontStyle: 'normal',
-              							fontFamily: "Open Sans",
-              						},
-              					},],
-              				},
-              			},
-              			});
-              		},
-                      error: function(xhr, ajaxOptions, thrownError) {
-                         alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
-                      }
-              	});
-              
-              
-              });
-              
-              $('#range a.active').trigger('click');
+               $('#modal-security select[name=\'type\']').on('change', function() {
+               	$('#modal-security fieldset.collapse').removeClass('show');
+
+               	$('#modal-security #collapse-' + $(this).val()).addClass('show');
+               });
+
+               $('#modal-security select[name=\'type\']').trigger('change');
+               
+               $('#modal-security .dropdown-menu a').on('click', function(e) {
+               	e.preventDefault();
+               	
+               	$('#modal-security #button-path').html($(this).html() + ' <span class="caret"></span>');
+               	
+               	$('#modal-security input[name=\'path\']').val($(this).attr('href'));
+               });
+
+               $('#modal-security .dropdown-menu a').on('click', function(e) {
+               	e.preventDefault();
+
+               	$('#button-path').html($(this).text() + ' <span class="caret"></span>');
+
+               	$('input[name=\'path\']').val($(this).attr('href'));
+
+               	$('input[name=\'path\']').trigger('change');
+               });
+
+               $('#button-move').on('click', function() {
+               	var element = this;
+                $('#modal-security .modal-body').prepend('<div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> ' + json['success'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+               });
+
+               $('#modal-security select[name=\'type\']').on('change', function () {
+               	html  = '<ol>';
+               	html += '<li><p>Move</p>';
+               	html += '<p><strong>D:/ProgramFiles/Xampp/htdocs/Framework/OCs/system/storage/</strong></p>';
+               	html += '<p>to</p>';
+               	html += '<p><strong>' + $('#modal-security input[name=\'path\']').val() + $('#modal-security input[name=\'directory\']').val() + '/</strong></p></li>';
+               	html += '<li><p>Edit config.php change</p>';
+               	html += '<p><strong>define(\'DIR_STORAGE\', DIR_SYSTEM . \'storage/\');</strong></p>';
+               	html += '<p>to</p>';
+               	html += '<p><strong>define(\'DIR_STORAGE\', \'' + $('#modal-security input[name=\'path\']').val() + $('#modal-security input[name=\'directory\']').val() + '/\');</strong></p></li>';
+               	html += '<li><p>Edit admin/config.php and change</p>';
+               	html += '<p><strong>define(\'DIR_STORAGE\', DIR_SYSTEM . \'storage/\');</strong></p>';
+               	html += '<p>to</p>';
+               	html += '<p><strong>define(\'DIR_STORAGE\', \'' + $('#modal-security input[name=\'path\']').val() + $('#modal-security input[name=\'directory\']').val() + '/\');</strong></p></li>';
+                html += '</ol>';
+
+               	$('#collapse-manual .form-control').html(html);
+               });
+
+               $('input[name=\'path\']').trigger('change');
             </script>
-          </div>
-        </div>
-        <div class="row mt-4 ">
-          <div class="col-lg-4 col-sm-12 mb-lg-0 mb-4">
-            <div class="card h-100">
-              <div class="card-header pb-0">
-                <h6 class="text-info text-lg"><i class="fas fa-calendar-alt"></i> Recent Activity</h6>
-              </div>
-              <div class="card-body p-3">
-                <div class="timeline timeline-one-side">
-                  <div class="timeline-block mb-3">
-                    <span class="timeline-step">
-                    <i class="fas fa-user-shield text-info text-gradient" data-bs-toggle="tooltip" data-bs-placement="top" title="Login" data-container="body" data-animation="true"></i>
-                    </span>
-                    <div class="timeline-content">
-                      <h6 class="text-dark text-sm mb-0"><a href="http://localhost/Framework/OCs/admin/index.php?route=customer/customer/edit&amp;user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS&amp;customer_id=1">Sharda Sharma</a> logged in.</h6>
-                      <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">17/05/2021 12:26:51</p>
-                    </div>
-                  </div>
-                  <div class="timeline-block mb-3">
-                    <span class="timeline-step">
-                    <i class="fas fa-user-check text-success text-gradient" data-bs-toggle="tooltip" data-bs-placement="top" title="Customer Order" data-container="body" data-animation="true"></i>
-                    </span>
-                    <div class="timeline-content">
-                      <h6 class="text-dark text-sm mb-0"><a href="http://localhost/Framework/OCs/admin/index.php?route=customer/customer/edit&amp;user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS&amp;customer_id=1">Sudeep Dey</a> added a <a href="http://localhost/Framework/OCs/admin/index.php?route=sale/order/info&amp;user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS&amp;order_id=7">new order</a>.</h6>
-                      <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">16/05/2021 04:53:07</p>
-                    </div>
-                  </div>
-                  <div class="timeline-block mb-3">
-                    <span class="timeline-step">
-                    <i class="fas fa-lock text-warning text-gradient" data-bs-toggle="tooltip" data-bs-placement="top" title="Password Changed" data-container="body" data-animation="true"></i>
-                    </span>
-                    <div class="timeline-content">
-                      <h6 class="text-dark text-sm mb-0"><a href="http://localhost/Framework/OCs/admin/index.php?route=customer/customer/edit&amp;user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS&amp;customer_id=1">Huma Bagde</a> updated their account password.</h6>
-                      <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">13/05/2021 12:27:53</p>
-                    </div>
-                  </div>
-                  <div class="timeline-block mb-3">
-                    <span class="timeline-step">
-                    <i class="fas fa-user-cog text-primary text-gradient" data-bs-toggle="tooltip" data-bs-placement="top" title="Password Reset" data-container="body" data-animation="true"></i>
-                    </span>
-                    <div class="timeline-content">
-                      <h6 class="text-dark text-sm mb-0"><a href="http://localhost/Framework/OCs/admin/index.php?route=customer/customer/edit&amp;user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS&amp;customer_id=1">Divyani Upare</a> reset their account password.</h6>
-                      <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">13/05/2021 12:27:08</p>
-                    </div>
-                  </div>
-                  <div class="timeline-block ">
-                    <span class="timeline-step">
-                    <i class="fas fa-user-plus text-info text-gradient" data-bs-toggle="tooltip" data-bs-placement="top" title="New Customer" data-container="body" data-animation="true"></i>
-                    </span>
-                    <div class="timeline-content">
-                      <h6 class="text-dark text-sm mb-0"><a href="http://localhost/Framework/OCs/admin/index.php?route=customer/customer/edit&amp;user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS&amp;customer_id=0">Sakshi Gupta</a> registered a new account.</h6>
-                      <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">13/05/2021 11:26:29</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-8 col-sm-12 mb-lg-0 mb-4">
-            <div class="card h-100">
-              <div class="card-header pb-0">
-                <h6 class="text-info text-lg"><i class="fas fa-shopping-cart"></i> Latest Orders</h6>
-              </div>
-              <div class="card-body px-0 pt-0 pb-2">
-                <div class="table-responsive p-0">
-                  <table class="table align-items-center justify-content-center mb-0">
-                    <thead>
-                      <tr>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Order ID</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Customer</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Status</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Date Added</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Total</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Action</th>
-                        <th></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="align-right">
-                          <h6 class="ms-2 mb-0 text-xs font-weight-bold mb-0">5</h6>
-                        </td>
-                        <td>
-                          <p class="font-weight-bold mb-0">Hira Hiwarkar</p>
-                        </td>
-                        <td>
-                          <span class="text-sm font-weight-bold">Complete</span>
-                        </td>
-                        <td class="align-middle text-center">
-                          <span class="text-xs font-weight-bold">16/05/2021</span>
-                        </td>
-                        <td class="align-middle text-center">
-                          <span class="text-lg font-weight-bold">$1,055.00</span>
-                        </td>
-                        <td class="align-middle">
-                          <a class="btn btn-link text-secondary mb-0" href="http://localhost/Framework/OCs/admin/index.php?route=sale/order/info&amp;user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS&amp;order_id=5" data-bs-toggle="tooltip" data-bs-placement="top" title="View" data-container="body" data-animation="true">
-                          <i class="fas fa-eye text-lg"></i>
-                          </a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="align-right">
-                          <h6 class="ms-2 mb-0 text-xs font-weight-bold mb-0">2</h6>
-                        </td>
-                        <td>
-                          <p class="font-weight-bold mb-0">Chetna Upare</p>
-                        </td>
-                        <td>
-                          <span class="text-sm font-weight-bold">Complete</span>
-                        </td>
-                        <td class="align-middle text-center">
-                          <span class="text-xs font-weight-bold">16/05/2021</span>
-                        </td>
-                        <td class="align-middle text-center">
-                          <span class="text-lg font-weight-bold">$105.00</span>
-                        </td>
-                        <td class="align-middle">
-                          <a class="btn btn-link text-secondary mb-0" href="http://localhost/Framework/OCs/admin/index.php?route=sale/order/info&amp;user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS&amp;order_id=2" data-bs-toggle="tooltip" data-bs-placement="top" title="View" data-container="body" data-animation="true">
-                          <i class="fas fa-eye text-lg"></i>
-                          </a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="align-right">
-                          <h6 class="ms-2 mb-0 text-xs font-weight-bold mb-0">4</h6>
-                        </td>
-                        <td>
-                          <p class="font-weight-bold mb-0">Farheen Mehta</p>
-                        </td>
-                        <td>
-                          <span class="text-sm font-weight-bold">Complete</span>
-                        </td>
-                        <td class="align-middle text-center">
-                          <span class="text-xs font-weight-bold">13/05/2021</span>
-                        </td>
-                        <td class="align-middle text-center">
-                          <span class="text-lg font-weight-bold">$105.00</span>
-                        </td>
-                        <td class="align-middle">
-                          <a class="btn btn-link text-secondary mb-0" href="http://localhost/Framework/OCs/admin/index.php?route=sale/order/info&amp;user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS&amp;order_id=4" data-bs-toggle="tooltip" data-bs-placement="top" title="View" data-container="body" data-animation="true">
-                          <i class="fas fa-eye text-lg"></i>
-                          </a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="align-right">
-                          <h6 class="ms-2 mb-0 text-xs font-weight-bold mb-0">3</h6>
-                        </td>
-                        <td>
-                          <p class="font-weight-bold mb-0">Shailesh Qureshi</p>
-                        </td>
-                        <td>
-                          <span class="text-sm font-weight-bold">Complete</span>
-                        </td>
-                        <td class="align-middle text-center">
-                          <span class="text-xs font-weight-bold">12/05/2021</span>
-                        </td>
-                        <td class="align-middle text-center">
-                          <span class="text-lg font-weight-bold">$106.00</span>
-                        </td>
-                        <td class="align-middle">
-                          <a class="btn btn-link text-secondary mb-0" href="http://localhost/Framework/OCs/admin/index.php?route=sale/order/info&amp;user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS&amp;order_id=3" data-bs-toggle="tooltip" data-bs-placement="top" title="View" data-container="body" data-animation="true">
-                          <i class="fas fa-eye text-lg"></i>
-                          </a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="align-right">
-                          <h6 class="ms-2 mb-0 text-xs font-weight-bold mb-0">1</h6>
-                        </td>
-                        <td>
-                          <p class="font-weight-bold mb-0">Sakshi Jiwane</p>
-                        </td>
-                        <td>
-                          <span class="text-sm font-weight-bold">Canceled</span>
-                        </td>
-                        <td class="align-middle text-center">
-                          <span class="text-xs font-weight-bold">12/05/2021</span>
-                        </td>
-                        <td class="align-middle text-center">
-                          <span class="text-lg font-weight-bold">$106.45</span>
-                        </td>
-                        <td class="align-middle">
-                          <a class="btn btn-link text-secondary mb-0" href="http://localhost/Framework/OCs/admin/index.php?route=sale/order/info&amp;user_token=JwK5QwAYJM8JwyCTpxQ61vkRhSVmRrrS&amp;order_id=1" data-bs-toggle="tooltip" data-bs-placement="top" title="View" data-container="body" data-animation="true">
-                          <i class="fas fa-eye text-lg"></i>
-                          </a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <footer class="footer pt-3">
-          <div class="container-fluid">
-            <div class="row align-items-center justify-content-lg-between">
-              <div class="col-lg-6 mb-lg-0 mb-4">
-                <div class="copyright text-center text-sm text-muted text-lg-left">&copy; 2021, Theme made with <i class="fa fa-heart"></i> by <a href="https://jhom.co#about" class="font-weight-bold" target="_blank">Nexa Domain</a> for <a href="http://www.opencart.com">OpenCart</a></div>
-              </div>
-              <div class="col-lg-6">
-                <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                  <li class="nav-item">
-                    <a href="https://github.com/nexadomain/oc-ashvira-admin/blob/main/README.md" class="nav-link text-muted" target="_blank">Documentation</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=41905" class="nav-link text-muted" target="_blank">Marketplace</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=41905" class="nav-link text-muted" target="_blank">Upgrade to Pro</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </footer>
-      </div>
-    </main>
-    <!-- Control Center for Ashvira Dashboard: parallax effects, scripts for the example pages etc -->
-    <script>
-      var win = navigator.platform.indexOf('Win') > -1;
-      if (win && document.querySelector('#sidenav-scrollbar')) {
-        var options = {
-          damping: '0.5'
-        }
-        Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-      }
-    </script>
-    <script src="https://cdn.jsdelivr.net/gh/creativetimofficial/soft-ui-dashboard@1.0.2/assets/js/soft-ui-dashboard.min.js"></script>
-  </body>
+         </div>
+      </main>
+      <!-- Control Center for Ashvira Dashboard: parallax effects, scripts for the example pages etc -->
+      <script>
+         var win = navigator.platform.indexOf('Win') > -1;
+         if (win && document.querySelector('#sidenav-scrollbar')) {
+           var options = {
+             damping: '0.5'
+           }
+           Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+         }
+      </script>
+      <script src="https://cdn.jsdelivr.net/gh/creativetimofficial/soft-ui-dashboard@1.0.2/assets/js/soft-ui-dashboard.min.js"></script>
+   </body>
 </html>
